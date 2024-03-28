@@ -57,6 +57,7 @@ export default function Home() {
         <Image
           className="pointer-events-none "
           priority
+          loading="eager"
           fill
           src={bg}
           objectFit="cover"
