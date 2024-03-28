@@ -1,8 +1,8 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Juicy Fest 25'",
-  description: "",
+  title: "Jammin 25'",
+  description: "Jammin - Australia Reggae festival",
 };
 
 export default function RootLayout({ children }) {
