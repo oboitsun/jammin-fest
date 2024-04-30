@@ -57,7 +57,7 @@ export default function SubmitForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-1 lg:gap-3 bg-black/0 p-0 xl:p-0   w-full  mx-auto  text-2xl  *:placeholder:text-peach/75 relative z-20">
+      className="flex flex-col gap-1 lg:gap-1.5 bg-black/0 p-0 xl:p-0   w-full  mx-auto  text-2xl  *:placeholder:text-peach/75 relative z-20">
       {!submitted ? (
         <>
           <input
@@ -70,7 +70,7 @@ export default function SubmitForm() {
           <input
             id="email_real"
             placeholder="email"
-            className=" border-peach border-2 rounded-lg bg-white w-full  px-3 lg:px-5 pt-1 placeholder:uppercase placeholder:text-[#555555] text-mustard caret-mustard uppercase outline-none "
+            className=" border-peach border-2 lg:h-16  rounded-lg bg-white w-full  px-3 lg:px-5 pt-1 placeholder:uppercase placeholder:text-[#555555] text-mustard caret-mustard uppercase outline-none "
             type="email"
             name="emailr"
             required
@@ -79,7 +79,7 @@ export default function SubmitForm() {
           <input
             id="name"
             placeholder="First Name"
-            className=" border-peach border-2 rounded-lg bg-white w-full  px-3 lg:px-5 pt-1 placeholder:uppercase placeholder:text-[#555555] text-mustard caret-mustard uppercase outline-none "
+            className=" border-peach border-2 lg:h-16 rounded-lg bg-white w-full  px-3 lg:px-5 pt-1 placeholder:uppercase placeholder:text-[#555555] text-mustard caret-mustard uppercase outline-none "
             type="text"
             name="fname"
             required
@@ -87,7 +87,7 @@ export default function SubmitForm() {
           <input
             id="name"
             placeholder="Last name"
-            className=" border-peach border-2 rounded-lg bg-white w-full  px-3 lg:px-5 pt-1 placeholder:uppercase placeholder:text-[#555555] text-mustard caret-mustard uppercase outline-none "
+            className=" border-peach border-2 lg:h-16 rounded-lg bg-white w-full  px-3 lg:px-5 pt-1 placeholder:uppercase placeholder:text-[#555555] text-mustard caret-mustard uppercase outline-none "
             type="text"
             name="lname"
             required
@@ -97,10 +97,13 @@ export default function SubmitForm() {
             <Dropdown
               triggerEl={
                 <div
-                  className={`border-2 border-peach cursor-pointer  h-12 lg:h-14 leading-none bg-white  rounded-[10px] bg-transparent w-full  px-3 xl:px-4 flex items-center uppercase ${
+                  className={`border-2 border-peach cursor-pointer  h-12 lg:h-16 leading-none bg-white  rounded-[10px] bg-transparent w-full  px-3 xl:px-4 flex items-center uppercase ${
                     country ? "text-peach" : "text-peach/75"
                   }`}>
-                  {country ?? "Country"}
+                  <p
+                    className={`whitespace-nowrap overflow-hidden overflow-ellipsis uppercase relative top-0.5 `}>
+                    {country ?? "Country"}
+                  </p>
                 </div>
               }>
               <div
@@ -108,11 +111,11 @@ export default function SubmitForm() {
                   setCountry("Australia");
                   setLocation(items?.["Australia"]?.locations[0]);
                 }}
-                className="px-4 py-1 leading-none cursor-pointer hover:bg-white/40 text-2xl uppercase">
+                className="px-4 pb-3 pt-5 leading-none cursor-pointer hover:bg-white/40 text-2xl uppercase">
                 Australia
               </div>
               <div
-                className="px-4 py-1 leading-none cursor-pointer hover:bg-white/40 text-2xl uppercase"
+                className="px-4 pt-3 pb-5 leading-none cursor-pointer hover:bg-white/40 text-2xl uppercase"
                 onClick={() => {
                   setCountry("New Zealand");
                   setLocation(items?.["New Zealand"]?.locations[0]);
@@ -123,11 +126,11 @@ export default function SubmitForm() {
             <Dropdown
               triggerEl={
                 <div
-                  className={`border-2 border-peach cursor-pointer  h-12 lg:h-14 leading-none bg-white  rounded-[10px] bg-transparent w-full  px-3 xl:px-4 flex items-center uppercase ${
+                  className={`border-2 border-peach cursor-pointer  h-12 lg:h-16 leading-none bg-white  rounded-[10px] bg-transparent w-full  px-3 xl:px-4 flex items-center uppercase ${
                     location ? "text-peach" : "text-peach/75"
                   }`}>
                   <p
-                    className={`whitespace-nowrap overflow-hidden overflow-ellipsis uppercase relative top-1 `}>
+                    className={`whitespace-nowrap overflow-hidden overflow-ellipsis uppercase relative top-0.5 `}>
                     {location ?? "Location"}
                   </p>
                 </div>
@@ -135,7 +138,7 @@ export default function SubmitForm() {
               {items?.[country]?.locations &&
                 items?.[country]?.locations.map((location) => (
                   <div
-                    className="px-4 py-1 leading-none cursor-pointer hover:bg-white/40 text-2xl"
+                    className="px-4 py-3 first-of-type:pt-5 last-of-type:pb-5 leading-none cursor-pointer hover:bg-white/40 text-2xl"
                     key={location}
                     onClick={() => setLocation(location)}>
                     {location}
@@ -146,15 +149,15 @@ export default function SubmitForm() {
           <input
             id="invite"
             placeholder="Who do you wanna see?"
-            className=" border-peach border-2 rounded-lg  w-full  px-3 lg:px-5 pt-1 placeholder:uppercase placeholder:text-[#555555] text-mustard caret-mustard uppercase outline-none "
+            className=" border-peach border-2 lg:h-16 rounded-lg  w-full  px-3 lg:px-5 pt-1 placeholder:uppercase placeholder:text-[#555555] text-mustard caret-mustard uppercase outline-none "
             type="text"
             name="invite"
           />
           <button
             type="submit"
             disabled={submitted}
-            className="bg-peach text-center h-14  w-full  rounded-lg rounded-bl-lg text-white lg:text-40 px-3 xl:px-6  lg:px-8 flex-shrink-0 uppercase  darma-e transition-all hover:text-white hover:bg-pink ">
-            <span className="relative top-1">
+            className="bg-peach text-center h-12 lg:h-16  w-full  rounded-lg rounded-bl-lg text-white  px-3 xl:px-6  lg:px-8 flex-shrink-0 uppercase  darma-e transition-all hover:text-white hover:bg-pink ">
+            <span className="relative top-0.5">
               {" "}
               {submitted ? "Thank You for application" : "STAY UPDATED"}
             </span>

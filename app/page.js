@@ -7,9 +7,9 @@ import Socials from "../components/Socials";
 import SubmitForm from "../components/SubmitForm";
 export default function Home() {
   return (
-    <div className="w-screen  h-screen overflow-hidden flex flex-col items-center relative">
+    <div className="w-screen  h-screen overflow-hidden flex flex-col items-center relative px-5 lg:px-10">
       {/* <Header /> */}
-      <div className="flex flex-col items-center gap-3 justify-center h-1/2 flex-grow w-full max-w-[1330px] relative px-5 lg:px-10">
+      <div className="flex flex-col items-center gap-3 justify-center h-1/2 flex-grow w-full max-w-[1390px] relative">
         <div className="flex flex-col lg:grid lg:grid-cols-[1.5fr,1fr] items-center w-full max-w-max  my-auto">
           <div>
             <motion.div
@@ -37,7 +37,7 @@ export default function Home() {
           <div className="w-full ">
             <SubmitForm />
 
-            <div className="lg:hidden  w-max mt-6">
+            <div className="lg:hidden  w-max mt-6 mx-auto">
               <Socials />
             </div>
           </div>
