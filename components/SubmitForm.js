@@ -1,6 +1,8 @@
 "use client";
+import axios from "axios";
 import { useEffect, useState } from "react";
 import Dropdown from "./Dropdown";
+
 const items = {
   Australia: {
     locations: ["Queensland", "New South Wales", "Western Australia", "Victoria"],

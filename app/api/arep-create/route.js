@@ -1,4 +1,5 @@
 import * as crypto from "crypto";
+
 export async function POST(req) {
   const { email, fname, lname, tag, country, location } = (await req?.json()) || {};
 
