@@ -18,6 +18,8 @@ export default function Home() {
               transition={{ delay: 0.3 }}
               animate={{ opacity: 1 }}>
               <Image
+                priority
+                loading="eager"
                 className="mx-auto "
                 width={logo.width}
                 height={logo.height}
